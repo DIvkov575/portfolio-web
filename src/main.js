@@ -1,31 +1,18 @@
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 const floatingImg = document.getElementById("floatingElem");
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-const myFunct = () => __awaiter(this, void 0, void 0, function* () {
-    while (true) {
-        sleep(1000).then(() => { console.log("asd"); });
+console.log(screen.width);
+let prev_x = 0;
+let prev_y = 0;
+let const_x = 0.5;
+let const_y = 0.5;
+let bound = screen.width + 10;
+function animate() {
+    if (prev_x == bound || prev_x == -15) {
+        const_x = -const_x;
     }
-});
-myFunct();
-// const myFunc = async () => {
-//   setTimeout(()=>{
-//     floatingImg.style.top += 0.5;
-//   }, 1000);
-// }
-// const exec =  {
-// }
-// while (true){
-// exec()
-// }
-// setTimeout(()=>{console.log("heelo")}, 10000);
+    prev_x += const_x;
+    prev_y += const_y;
+    floatingImg.style.left = prev_x.toString() + "px";
+    setTimeout(() => { animate(); }, 50);
+}
+animate();
 //# sourceMappingURL=main.js.map
