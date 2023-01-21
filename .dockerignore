@@ -1,0 +1,10 @@
+.idea/
+.git/
+node_modules/
+.DS_Store
+session.vim
+.gitignore
+index.js.map
+index.ts
+readme.md
+tsconfig.json
