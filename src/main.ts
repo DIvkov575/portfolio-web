@@ -13,12 +13,12 @@ console.log(bound_y)
 
 function animate(){
   if ((prev_x >= bound_x-20) || (prev_x <= -5)) {
-    const_x *= ((Math.random()%75)+75)/100
+    // const_x *= ((Math.random()%75)+75)/100
     const_x = -const_x; 
     prev_x += const_x;
   }
   if ((prev_y >= bound_y-20) || (prev_y <= -5)) {
-    const_y *= ((Math.random()%75)+75)/100
+    // const_y *= ((Math.random()%75)+75)/100
     const_y = -const_y; 
     prev_y += const_y;
   }
